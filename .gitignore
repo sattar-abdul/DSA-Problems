@@ -1,0 +1,14 @@
+# Ignore compiled class files
+*.class
+
+# Ignore package files
+*.jar
+*.war
+*.ear
+
+# Ignore IDE/project settings
+.idea/
+.vscode/
+*.iml
+target/
+bin/
