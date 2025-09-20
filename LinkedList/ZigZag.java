@@ -1,4 +1,4 @@
-// package LinkedList;
+package LinkedList;
 
 public class ZigZag {
     static class Node {
