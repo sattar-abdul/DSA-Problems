@@ -15,7 +15,7 @@ public class IntersectionOfTwoLL {
     }
 
     public Node getIntersectionNode(Node head1, Node head2) {
-        Node temp1 = head1, temp2 = head2;
+
         while (head2 != null) {
             Node temp = head1;
             while (temp != null) {

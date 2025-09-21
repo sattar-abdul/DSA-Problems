@@ -1,6 +1,6 @@
 // swapping two Nodes in a Linked List using given keys (data)
 
-// package LinkedList;
+package LinkedList;
 
 public class SwapNodes {
     static class Node {
