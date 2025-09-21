@@ -29,5 +29,4 @@ public class ReverseTheString {
         str = reverseString(str);
         System.out.println("Reversed str: " + str);
     }
-
 }
