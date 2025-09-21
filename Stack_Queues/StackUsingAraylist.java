@@ -1,8 +1,10 @@
-// package Stack_Queues;
+// Implementation of stack using arraylist
+
+package Stack_Queues;
 
 import java.util.ArrayList;
 
-public class StackBasics {
+public class StackUsingAraylist {
     static class Stack {
         static ArrayList<Integer> list = new ArrayList<>();
 
