@@ -1,7 +1,5 @@
 import java.util.Stack;
 
-import javax.naming.InterruptedNamingException;
-
 public class StockSpan {
 
     public static void stockspan(int[] stocks, int[] span) {
