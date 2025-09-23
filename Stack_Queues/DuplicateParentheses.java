@@ -1,7 +1,10 @@
+// O(n) space and time
+
 import java.util.Stack;
 
+
 public class DuplicateParentheses {
-    public static boolean hasDuplicateParentheses(String str) {
+    public static boolean hasDuplicateParentheses(String str) { 
 
         Stack<Character> stack = new Stack<>();
 
