@@ -15,13 +15,10 @@ public class temp {
     }
 
     public static void main(String[] args) {
-        int arr[] = { 6, 8, 0, 1, 3 };
-        int result[] = new int[arr.length];
-
-        nextGreaterElement(arr, result);
-
-        for (int ele : result) {
-            System.out.print(ele + " ");
+        Stack<Integer> stack = new Stack<>();
+        stack.push(1);
+        if(stack.peek() == 1){
+            System.out.println("hello");
         }
     }
 
