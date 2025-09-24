@@ -9,7 +9,7 @@ Each folder is organized by topic, and every file includes problem statements, a
 - ✅ Arrays
 - ✅ Strings
 - ✅ Linked List
-- ⏳ Stacks & Queues
+- ✅ Stacks & Queues
 - ⏳ Trees
 - ⏳ Graphs
 - ⏳ Dynamic Programming (DP)

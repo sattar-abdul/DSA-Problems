@@ -14,7 +14,7 @@ public class Palindrome {
 
     Node head;
 
-    public static boolean isPalindrome(Node head) {
+    public static boolean isPalindrome(Node head) {   // O(n) space and time
 
         // push all the data to stack
         Stack<Integer> s = new Stack<>();
