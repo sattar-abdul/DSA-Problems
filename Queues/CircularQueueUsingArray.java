@@ -74,10 +74,14 @@ public class CircularQueueUsingArray {
 
         // 1 2 3
 
+        q.remove();
+        q.add(4);
+
+        // 2 3 4
+
         while (!q.isEmpty()) {
             System.out.println(q.peek());
             q.remove();
         }
     }
-
 }
