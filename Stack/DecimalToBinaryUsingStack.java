@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class DecimalToBinary {
+public class DecimalToBinaryUsingStack {
 
   public static void printDecimalToBinary(int N) {
     Stack<Integer> q = new Stack<>();
