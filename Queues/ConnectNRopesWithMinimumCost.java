@@ -9,9 +9,11 @@ public class ConnectNRopesWithMinimumCost {
             pq.add(rope);
         }
 
+
         while (pq.size() > 1) {
             int first = pq.poll();
             int second = pq.poll();
+
 
             int newRope = first + second;
             pq.add(newRope);

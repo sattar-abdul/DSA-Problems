@@ -63,6 +63,7 @@ public class Test {
     }
 
     public static void main(String[] args) {
+        System.out.println("Hello");
         Stack s = new Stack();
         s.push(1);
         s.push(2);
