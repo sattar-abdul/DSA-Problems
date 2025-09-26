@@ -1,5 +1,6 @@
 public class CircularQueueUsingArray {
     static class Queue {
+        // Queue Class
         static int arr[];
         static int size;
         static int front;
