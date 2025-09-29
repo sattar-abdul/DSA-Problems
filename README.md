@@ -1,7 +1,7 @@
 # 📘 DSA Practice Repository
 
-This repository contains my solutions to **Data Structures & Algorithms (DSA)** problems while preparing for placements.  
-Each folder is organized by topic, and every file includes problem statements, approaches, and clean code.
+This repository contains my solutions to **Data Structures & Algorithms (DSA)** problems.
+Each folder is organized by topic, and every file includes a problem and it's clean code.
 
 ---
 
@@ -10,6 +10,7 @@ Each folder is organized by topic, and every file includes problem statements, a
 - ✅ Strings
 - ✅ Linked List
 - ✅ Stacks & Queues
+- ⏳ Greedy Algorithm
 - ⏳ Trees
 - ⏳ Graphs
 - ⏳ Dynamic Programming (DP)
