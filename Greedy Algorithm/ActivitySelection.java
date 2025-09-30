@@ -6,18 +6,28 @@ public class ActivitySelection{
 		ArrayList<Integer> ans = new ArrayList<>(); // to keep the index of selected acitvity
 		int countAct = 0;
 		
+		int activities[][] = new int[start.length][3];
+		for(int i=0; i<start.length; i++){
+			activities[i][0] = i;
+			activities[i][1] = start[i];
+			activities[i][2] = end[i];
+		}
+
+		// Lambda function to sort activites acc to end
+		Arrays.sort(activities, Comparator.comparingDouble(o -> o[2]));
+
 
 		// add first act (according to end array)
-		ans.add(0);
+		ans.add(activities[0][0]);
 		countAct++;
 
-		int lastEnd = end[0];
-		for(int i=1; i<end.length; i++){
+		int lastEnd = activities[0][2];
+		for(int i=1; i<start.length; i++){
 			
-			if(start[i] >= lastEnd){        // start of next act >= end of prev act
+			if(activities[i][1] >= lastEnd){        // start of next act >= end of prev act
 				countAct++;
-				ans.add(i);
-				lastEnd = end[i];
+				ans.add(activities[i][0]);
+				lastEnd = activities[i][2];
 			}
 		}
 
