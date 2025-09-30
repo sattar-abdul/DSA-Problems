@@ -1,6 +1,6 @@
 public class BinarySearch{
 
-	public static int binarySearch(int arr[], int key) {
+	public static int binarySearch(int arr[], int key) {  // O(logn)
 		int left = 0;
 		int right = arr.length - 1;
 
