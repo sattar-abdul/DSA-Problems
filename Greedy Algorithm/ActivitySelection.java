@@ -3,7 +3,7 @@ import java.util.*;
 public class ActivitySelection{
 	public static void printMaxActivity(int start[], int end[]){
 
-		ArrayList<Integer> ans = new ArrayList<>(); // to keep the index of selected acitvity
+		ArrayList<Integer> ans = new ArrayList<>(); // To keep the index of selected acitvity
 		int countAct = 0;
 		
 		int activities[][] = new int[start.length][3];
@@ -17,7 +17,7 @@ public class ActivitySelection{
 		Arrays.sort(activities, Comparator.comparingDouble(o -> o[2]));
 
 
-		// add first act (according to end array)
+		// add first act (according to activities array)
 		ans.add(activities[0][0]);
 		countAct++;
 
@@ -37,7 +37,7 @@ public class ActivitySelection{
 
 	public static void main(String[] args) {
 		int start[] = {1,3, 0, 5, 8, 5};
-		int end[] = {2, 4, 6, 7 ,9, 9};   // already sorted given
+		int end[] = {2, 4, 6, 7 ,9, 9};
 		printMaxActivity(start, end);
 	}
 }
