@@ -4,11 +4,11 @@ public class MinAbsDifferencePairs{
 	public static int minAbsDifference(int A[], int B[]){
 		int minDiff = 0;
 
-		// 1. sort both array
+		// 1. sort both array - O(n logn)
 		Arrays.sort(A);
 		Arrays.sort(B);
 
-		// 2. calculate absolute difference
+		// 2. calculate absolute difference -  - O(n)
 		for(int i=0; i<A.length; i++){
 			minDiff += Math.abs(A[i] - B[i]);
 		}
@@ -18,8 +18,8 @@ public class MinAbsDifferencePairs{
 	}
 
 	public static void main(String[] args) {
-        int[] A = {2, 1, 3};
-        int[] B = {1, 3, 3};
+        int[] A = {4, 1, 7, 8};
+        int[] B = {2, 3, 6, 5};
 
         System.out.print("Pairs with minimum absolute difference:");
         System.out.println(minAbsDifference(A, B));
