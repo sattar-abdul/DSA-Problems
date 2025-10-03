@@ -10,7 +10,7 @@ Each folder is organized by topic, and every file includes a problem and it's cl
 - ✅ Strings
 - ✅ Linked List
 - ✅ Stacks & Queues
-- ⏳ Greedy Algorithm
+- ✅ Greedy Algorithm
 - ⏳ Trees
 - ⏳ Graphs
 - ⏳ Dynamic Programming (DP)
