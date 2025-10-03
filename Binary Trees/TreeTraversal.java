@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class TreeTraversal{
 	static class Node{
 		int data;
@@ -14,6 +16,7 @@ public class TreeTraversal{
 	static class BinaryTree{
 		static int index = -1; // common for all recurive call
 
+		// Pre order Traversal
 		public static void preorder(Node root){  // O(n)
 			
 			// Base case
@@ -31,6 +34,8 @@ public class TreeTraversal{
 			preorder(root.right);
 		}
 
+
+		// In order Traversal
 		public static void inorder(Node root){  // O(n)
 			
 			// Base case
@@ -48,6 +53,8 @@ public class TreeTraversal{
 			inorder(root.right);
 		}
 
+
+		// Post order Traversal
 		public static void postorder(Node root){  // O(n)
 			
 			// Base case
@@ -66,7 +73,36 @@ public class TreeTraversal{
 		}
 
 
-		// Builds a trre using preorder
+		// Level order Traversal (BFS)
+		public static void levelorder(Node root){  // O(n)
+			if(root == null){
+				return;
+			}
+
+			Queue<Node> q = new ArrayDeque<>();
+			q.add(root);
+			q.add(null);
+
+			while(!q.isEmpty()){
+				Node currNode = q.poll();
+				if(currNode == null){
+					System.out.println();
+					if(q.isEmpty()){
+						break;
+					} else {
+						q.add(null);
+					}
+				}
+
+				q.add(currNode.left);
+				q.add(currNode.right);
+				q.add(null);
+
+				System.out.print(currNode.data+" ");
+			}
+		}
+
+		// Builds a tree using preorder
 		public static Node buildTree(int arr[]){ // O(n) 
 			index++;
 
