@@ -21,7 +21,7 @@ public class Test {
 
             while(!q.isEmpty()){
                 Node curr = q.poll();
-                if(curr == null){
+                if(curr == null) {
                 System.out.println();
                 continue;
 
