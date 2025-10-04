@@ -1,62 +1,76 @@
 import java.util.*;
 
 public class Test {
-    static class Job{
-        int id;
-        int deadline;
-        int profit;
+    static class Node{
+        int data;
+        Node left, right;
 
-        Job(int first, int second, int third){
-            this.id = first;
-            this.deadline = second;
-            this.profit = third;
+        Node(int data){
+            this.data = data;
+            this.left = null;
+            this.right = null;
         }
 
     }
 
-    public static void jobSequencing(Job[] jobs){
-        Arrays.sort(jobs, (a, b) -> b.profit - a.profit);
+    public static class BinaryTree{
+         public static void levelOrder(Node root){
+            Queue<Node> q = new LinkedList<>();
+            q.add(root);
+            q.add(null);
 
-        int maxDeadline = Integer.MIN_VALUE;
-        for(Job job: jobs){
-            maxDeadline = Math.max(maxDeadline, job.deadline);
-        }
+            while(!q.isEmpty()){
+                Node curr = q.poll();
+                if(curr == null){
+                System.out.println();
+                continue;
 
-        Integer slots[] = new Integer[maxDeadline+1];
-        Arrays.fill(slots, -1);
-
-        int profit = 0;
-
-        for(Job job:jobs){
-            for(int i = job.deadline; i>0; i--){
-                if(slots[i] == -1){
-                    slots[i] = job.id;
-                    profit += job.profit;
-                    break;
+                } else{
+                    System.out.print(curr.data+" ");    
                 }
+                
+
+                if(curr.left != null){
+                    q.add(curr.left);
+                }
+
+
+                if(curr.right != null){
+                    q.add(curr.right);
+                }
+
+                q.add(null);
             }
-        }
+        
+         }
 
-        System.out.println("Maximum profit = " + profit);
-        System.out.print("Jobs Sequence = ");
-        for(int element : slots){
-        if(element != -1){
-            System.out.print(element+" ");
-        }
+         public static int height(Node root){
+            if(root == null){
+                return 0;
+            }
+
+            int leftHeight = height(root.left);
+            int rightHeight = height(root.right);
+            return Math.max(leftHeight, rightHeight) + 1;
+         }
+        
+
     }
 
-    }
+
     
     public static void main(String[] args) {
-        Job jobs[] = {
-            new Job(1,2,100),
-            new Job(2,1,50),
-            new Job(3,2,10),
-            
-        };
+        
+        BinaryTree tree = new BinaryTree();
 
-        jobSequencing(jobs);
-        int arr[] = {4,5,1,2,3};
-        System.out.println(Arrays.toString(arr));
+        Node root = new Node(1);
+        root.left = new Node(2);
+        root.right = new Node(3);
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
+        root.right.right = new Node(6);
+
+        tree.levelOrder(root);
+        System.out.println(tree.height(root));
     }
 }
