@@ -46,22 +46,24 @@ public class TopViewOfBinaryTree {
 					} else {
 						q.add(null);
 					}
-				}
-
-				if(!map.containsKey(curr.hd)) { // first time HD is occuring
+				} else {
+					if(!map.containsKey(curr.hd)) { // first time HD is occuring
 					map.put(curr.hd, curr.node);
+					}
+
+					if(curr.node.left != null){
+						q.add(new Info(curr.node.left, curr.hd-1));
+						min = Math.min(min, curr.hd-1);
+
+					}
+
+					if(curr.node.right != null){
+						q.add(new Info(curr.node.right, curr.hd+1));
+						max = Math.max(max, curr.hd+1);
+					}	
 				}
 
-				if(curr.node.left != null){
-					q.add(new Info(curr.node.left, curr.hd-1));
-					min = Math.min(min, curr.hd-1);
-
-				}
-
-				if(curr.node.right != null){
-					q.add(new Info(curr.node.right, curr.hd+1));
-					max = Math.max(max, curr.hd+1);
-				}
+				
 			}
 
 			// Print top view
