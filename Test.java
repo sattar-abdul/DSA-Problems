@@ -34,6 +34,38 @@ public class Test {
             }
         }
 
+        public void printKthLevel(Node root, int k) {
+            if (root == null){
+                return;
+            }
+
+            // BFS
+            Queue<Node> q = new LinkedList<>();
+            int level = 1;
+            q.add(root);
+
+            while(!q.isEmpty()){
+                Node curr = q.peek();
+
+                if(k == level){
+                    for(Node node: q){
+                        System.out.print(node.data+" ");
+                    }
+                    return;
+                }
+
+                level++;
+                for(Node node: q){
+                        q.poll();
+                }
+
+
+                if (curr.left != null) q.add(curr.left);
+                if (curr.right != null) q.add(curr.right);
+
+            }
+        }
+
         public static void topView(Node root){
             HashMap<Integer, Integer> map = new HashMap<>();
             Queue<Info> q = new ArrayDeque<>();
@@ -156,6 +188,6 @@ public class Test {
         root.left.right = new Node(5);
         root.right.right = new Node(6);
 
-        tree.topView(root);
+        tree.printKthLevel(root, 3);
     }
 }

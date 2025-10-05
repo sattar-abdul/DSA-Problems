@@ -41,7 +41,7 @@ public class KthLevelOfTree {
         tree.root.right.left = new Node(6);
         tree.root.right.right = new Node(7);
 
-        int k = 3;
+        int k = 1;
         System.out.print("Nodes at level " + k + ": ");
         tree.printKthLevel(tree.root, k, 1);
     }
