@@ -34,36 +34,19 @@ public class Test {
             }
         }
 
-        public void printKthLevel(Node root, int k) {
-            if (root == null){
+        public void printKthLevel(Node root, int k, int level) {
+            if(root == null){
                 return;
             }
 
-            // BFS
-            Queue<Node> q = new LinkedList<>();
-            int level = 1;
-            q.add(root);
-
-            while(!q.isEmpty()){
-                Node curr = q.peek();
-
-                if(k == level){
-                    for(Node node: q){
-                        System.out.print(node.data+" ");
-                    }
-                    return;
-                }
-
-                level++;
-                for(Node node: q){
-                        q.poll();
-                }
-
-
-                if (curr.left != null) q.add(curr.left);
-                if (curr.right != null) q.add(curr.right);
-
+            if(k == level){
+                System.out.println(root.data+" ");
+                return;
             }
+
+            printKthLevel(root.left, k, level+1);
+            printKthLevel(root.right, k, level+1);
+                 
         }
 
         public static void topView(Node root){
@@ -109,7 +92,6 @@ public class Test {
             if(root == null){
                 return 0;
             }
-
 
             int lh = height(root.left);
             int rh = height(root.right);
@@ -171,10 +153,92 @@ public class Test {
 
             return left && right;
          }
-        
 
+         public static int lca(Node root, int n1, int n2){
+            ArrayList<Integer> path1 = new ArrayList<>();
+            ArrayList<Integer> path2 = new ArrayList<>();
+
+            getPath(root, n1, path1);
+            getPath(root, n2, path2);
+
+
+            int i = 0;
+            for(; i<path1.size() && i<path2.size(); i++){
+                if(path1.get(i) != path2.get(i)){
+                    break;
+                }
+            }
+
+            int lca = path1.get(i-1); 
+            return lca;
+         }
+
+         public static boolean getPath(Node root,int n,ArrayList<Integer> path){
+            if(root == null){
+                return false;
+            }
+
+            path.add(root.data);
+            if(root.data == n){
+               return true; // node found
+            }
+
+            boolean left = getPath(root.left, n, path);
+            boolean right = getPath(root.right, n, path);
+
+            if(left || right){
+                return true;
+            }
+            path.remove(path.size()-1);
+            return false;
+         }
     }
 
+        private static int keyFinder(int arr[], int key, int idx){
+            if(idx >= arr.length){
+                return -1;
+            }
+
+            if(arr[idx] == key){
+                return idx;
+            }
+
+            return keyFinder(arr, key, idx+1);
+        }
+
+    public static int linearSearch(int arr[], int key){
+        return keyFinder(arr, key, 0);
+    }
+
+    public static int binarySearch(int arr[], int key){
+        int left=0;
+        int right=arr.length-1;
+
+        while(left<=right){
+            int mid = left + (right-left)/2;
+
+            if(arr[mid] == key){
+                return mid;
+            }
+
+            if(arr[mid] > key){
+                right = mid-1;
+            } else {
+                left = mid+1;
+            }
+        }
+        return -1;
+    }
+
+    public static void reverseArray(int arr[]){
+        int n = arr.length;
+
+        for(int i=0; i<n/2; i++){
+            int temp = arr[i];
+            arr[i] = arr[n-1-i];
+            arr[n-1-i] = temp;
+        }
+    }
 
     
     public static void main(String[] args) {
@@ -188,6 +252,11 @@ public class Test {
         root.left.right = new Node(5);
         root.right.right = new Node(6);
 
-        tree.printKthLevel(root, 3);
+        int arr[] = {1,2,3,4,5};
+        reverseArray(arr);
+        for(int el: arr){
+            System.out.println(el+" ");    
+        }
+        
     }
 }
