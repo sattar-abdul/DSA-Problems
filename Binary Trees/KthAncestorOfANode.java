@@ -48,7 +48,7 @@ public class KthAncestorOfANode{
         tree.root.left.left = new Node(4);
         tree.root.left.right = new Node(5);
 
-        int n = 5, k = 2;
+        int n = 5, k = 3;
         
         tree.kthAncestor(tree.root, n, k );
         
