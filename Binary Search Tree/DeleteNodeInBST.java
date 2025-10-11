@@ -38,6 +38,8 @@ public class DeleteNodeInBST{
 				// CASE3: Two child
 				Node successor = findInorderSuccessor(root.right);
 				root.data = successor.data;
+				
+				// delete the succssor node
 				root.right = delete(root.right, successor.data);
 
 
